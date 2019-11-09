@@ -9,12 +9,12 @@ public class PlayerMovement : MonoBehaviour
     public float forward;
     public float strafe;
     private float vvel = 0f;
-    private bool iscol = false;
+    private bool iscol = true;
 
     void OnCollisionEnter(Collision collision)
     {
         //if hitting the floor
-        if (collision.gameObject.name == "Plane")
+        if (collision.gameObject.tag == "ground")
         {
             //do not lmao
             iscol = true;

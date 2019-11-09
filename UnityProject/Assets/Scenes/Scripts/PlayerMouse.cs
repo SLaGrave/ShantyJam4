@@ -30,7 +30,18 @@ public class PlayerMouse : MonoBehaviour
         mouseLook += smoothV;
 
         // Move the camera and character
-        transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
+        if(-mouseLook.y > 90)
+        {
+            transform.localRotation = Quaternion.AngleAxis(90, Vector3.right);
+        }
+        else if(-mouseLook.y < -90)
+        {
+            transform.localRotation = Quaternion.AngleAxis(-90, Vector3.right);
+        }
+        else
+        {
+            transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
+        }
         character.transform.localRotation = Quaternion.AngleAxis(mouseLook.x, character.transform.up);
     }
 }

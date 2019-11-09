@@ -2387,7 +2387,7 @@ GameObject:
   - component: {fileID: 596984330}
   m_Layer: 8
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: BadBoy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2405,7 +2405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1669967647}
-  speed: 2
+  speed: 5
   animWalk: {fileID: 9100000, guid: b72d85cd64d8e4d20b93166aacec4107, type: 2}
   animEat: {fileID: 9100000, guid: f1ba974f4aea84386a00e36f59c2aca4, type: 2}
   t: {fileID: 2089158912}

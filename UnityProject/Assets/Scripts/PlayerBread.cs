@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerBread : MonoBehaviour
 {
-    public int HowManyBreadsHaveYouEatenInYourLife;
+    private int HowManyBreadsHaveYouEatenInYourLife;
+
+    public Text t;
 
     void OnCollisionEnter(Collision collision)
     {
@@ -12,6 +15,7 @@ public class PlayerBread : MonoBehaviour
         {
             Destroy(collision.gameObject);
             HowManyBreadsHaveYouEatenInYourLife++;
+            t.text = HowManyBreadsHaveYouEatenInYourLife.ToString();
         }
     }
 

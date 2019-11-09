@@ -384,6 +384,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: chonk
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: d3b220308039e41039693deb76c7b936,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d3b220308039e41039693deb76c7b936,
         type: 3}
       propertyPath: m_LocalPosition.x

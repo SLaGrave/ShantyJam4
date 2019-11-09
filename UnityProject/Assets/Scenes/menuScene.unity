@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 121188762}
   - component: {fileID: 121188761}
   - component: {fileID: 121188760}
+  - component: {fileID: 121188763}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -238,6 +239,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 121188758}
   m_CullTransparentMesh: 0
+--- !u!114 &121188763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121188758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc790f232722a406b98d3245d3c83216, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yourButton: {fileID: 121188760}
 --- !u!1 &437936422
 GameObject:
   m_ObjectHideFlags: 0
@@ -935,6 +949,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: chonk
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: d3b220308039e41039693deb76c7b936,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: f1ba974f4aea84386a00e36f59c2aca4, type: 2}
     - target: {fileID: -4216859302048453862, guid: d3b220308039e41039693deb76c7b936,
         type: 3}
       propertyPath: m_LocalPosition.x

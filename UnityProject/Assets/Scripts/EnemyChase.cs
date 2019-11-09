@@ -91,7 +91,7 @@ public class EnemyChase : MonoBehaviour
             {
                 // Good end
                 t.text = "You Win";
-                StartCoroutine(EndGame(5));
+                StartCoroutine(EndGame(8));
             }
             else
             {

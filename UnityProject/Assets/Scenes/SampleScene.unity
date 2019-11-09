@@ -1530,8 +1530,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.1428286
-  m_Center: {x: 0, y: 0, z: -0.20259893}
+  m_Radius: 1.304291
+  m_Center: {x: -1.8098587e-10, y: 0, z: -0.14516176}
 --- !u!54 &596984328
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4430,7 +4430,7 @@ GameObject:
   - component: {fileID: 1669967654}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

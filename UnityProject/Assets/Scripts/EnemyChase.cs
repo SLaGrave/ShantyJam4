@@ -77,34 +77,36 @@ public class EnemyChase : MonoBehaviour
             {
                 this.GetComponentInChildren<Animator>().runtimeAnimatorController = animWalk as RuntimeAnimatorController;
             }
-
-            // End Game
-            if (dist < 1.5f)
-            {
-                if(player.GetComponent<PlayerBread>().HasEnough())
-                {
-                    // Good end
-                    t.text = "You Win";
-                    UnityEditor.EditorApplication.isPlaying = false;
-                }
-                else
-                {
-                    // Bad end
-                    t.text = "You Lose";
-                    isDone = true;
-                    player.transform.LookAt(transform);
-                    endGameSound.Play(0);
-                    StartCoroutine(EndGame());
-                }
-            }
-
-            IEnumerator EndGame()
-            {
-                yield return new WaitForSeconds(5);
-                UnityEditor.EditorApplication.isPlaying = false;
-            }
         }
 
         
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            if(player.GetComponent<PlayerBread>().HasEnough())
+            {
+                // Good end
+                t.text = "You Win";
+                UnityEditor.EditorApplication.isPlaying = false;
+            }
+            else
+            {
+                // Bad end
+                t.text = "You Lose";
+                isDone = true;
+                player.transform.LookAt(transform);
+                endGameSound.Play(0);
+                StartCoroutine(EndGame());
+            }
+        }
+
+        IEnumerator EndGame()
+        {
+            yield return new WaitForSeconds(5);
+            UnityEditor.EditorApplication.isPlaying = false;
+        }
     }
 }

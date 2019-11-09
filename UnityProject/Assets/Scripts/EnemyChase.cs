@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyChase : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class EnemyChase : MonoBehaviour
 
     public RuntimeAnimatorController animWalk;
     public RuntimeAnimatorController animEat;
+
+    [Header("UI Stuff")]
+    public Text t;
 
     // Sound stuff
     [Header("Sound Stuff")]
@@ -69,11 +73,13 @@ public class EnemyChase : MonoBehaviour
             if(player.GetComponent<PlayerBread>().HasEnough())
             {
                 // Good end
+                t.text = "You Win";
                 UnityEditor.EditorApplication.isPlaying = false;
             }
             else
             {
                 // Bad end
+                t.text = "You Lose";
                 isDone = true;
                 player.transform.LookAt(transform);
                 endGameSound.Play(0);

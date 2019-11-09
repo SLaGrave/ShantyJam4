@@ -21,6 +21,7 @@ public class EnemyChase : MonoBehaviour
     [Header("Sound Stuff")]
     public AudioSource teleportSound;
     public AudioSource endGameSound;
+    public AudioSource winGameSound;
 
     // Update is called once per frame
     void Update()
@@ -91,6 +92,7 @@ public class EnemyChase : MonoBehaviour
             {
                 // Good end
                 t.text = "You Win";
+                winGameSound.Play(0);
                 StartCoroutine(EndGame(8));
             }
             else

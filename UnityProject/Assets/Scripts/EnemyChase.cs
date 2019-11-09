@@ -15,6 +15,8 @@ public class EnemyChase : MonoBehaviour
         float step =  speed * Time.deltaTime; // calculate distance to move
         transform.position = Vector3.MoveTowards(transform.position, player.transform.position, step);
 
+        transform.LookAt(player.transform);
+
         if (Vector3.Distance(transform.position, player.transform.position) < 0.001f)
         {
             // TODO: Call the player's death function

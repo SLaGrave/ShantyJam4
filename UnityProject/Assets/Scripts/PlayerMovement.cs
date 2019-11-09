@@ -10,6 +10,10 @@ public class PlayerMovement : MonoBehaviour
     public float strafe;
     private float vvel = 0f;
     private bool iscol = true;
+    private bool ismov = false;
+
+    [Header("Sound Stuff")]
+    public AudioSource walksound;
 
     void OnCollisionEnter(Collision collision)
     {
@@ -32,10 +36,13 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        bool prevmov = ismov;
 
         // Movement
         forward = Input.GetAxis("Vertical") * speed * Time.deltaTime;
         strafe = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+        ismov = forward != 0 || strafe != 0;
+
         transform.Translate(strafe, 0, forward);
 
         if (Input.GetKeyDown("escape"))
@@ -55,5 +62,10 @@ public class PlayerMovement : MonoBehaviour
             vvel -= 0.0075f;
             transform.Translate(0, vvel, 0);
         }
+
+        if (prevmov != ismov && ismov)
+            walksound.Play(0);
+        else if (prevmov != ismov)
+            walksound.Stop();
     }
 }

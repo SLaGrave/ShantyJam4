@@ -29,6 +29,8 @@ public class PlayerMouse : MonoBehaviour
         smoothV.y = Mathf.Lerp(smoothV.y, mouseDelta.y, 1f / smoothing);
         mouseLook += smoothV;
 
+        mouseLook.y = Mathf.Clamp(mouseLook.y, -90, 90);
+
         // Move the camera and character
         if(-mouseLook.y > 90)
         {

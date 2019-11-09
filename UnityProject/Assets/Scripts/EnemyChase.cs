@@ -66,10 +66,19 @@ public class EnemyChase : MonoBehaviour
         // End Game
         if (dist < 1.5f)
         {
-            isDone = true;
-            player.transform.LookAt(transform);
-            endGameSound.Play(0);
-            StartCoroutine(EndGame());
+            if(player.GetComponent<PlayerBread>().HasEnough())
+            {
+                // Good end
+                UnityEditor.EditorApplication.isPlaying = false;
+            }
+            else
+            {
+                // Bad end
+                isDone = true;
+                player.transform.LookAt(transform);
+                endGameSound.Play(0);
+                StartCoroutine(EndGame());
+            }
         }
 
         IEnumerator EndGame()

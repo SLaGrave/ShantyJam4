@@ -19,4 +19,9 @@ public class PlayerBread : MonoBehaviour
         }
     }
 
+    public bool HasEnough()
+    {
+        return HowManyBreadsHaveYouEatenInYourLife >= 5;
+    }
+
 }

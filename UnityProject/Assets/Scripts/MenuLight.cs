@@ -5,6 +5,7 @@ using UnityEngine;
 public class MenuLight : MonoBehaviour
 {
     private bool on = false;
+    public AudioSource a;
 
     // Update is called once per frame
     void Update()
@@ -13,6 +14,14 @@ public class MenuLight : MonoBehaviour
         if(q==0)
         {
             on = !on;
+            if(on)
+            {
+                a.Play(0);
+            }
+            else
+            {
+                a.Stop();
+            }
         }
 
         if(on)

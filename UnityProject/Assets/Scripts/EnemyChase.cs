@@ -5,7 +5,10 @@ using UnityEngine;
 public class EnemyChase : MonoBehaviour
 {
     public GameObject player;
-    public float speed = 1.0f;
+    public float speed = 2.0f;
+
+    public RuntimeAnimatorController animWalk;
+    public RuntimeAnimatorController animEat;
 
     // Update is called once per frame
     void Update()
@@ -17,14 +20,31 @@ public class EnemyChase : MonoBehaviour
 
         transform.LookAt(player.transform);
 
-        if (Vector3.Distance(transform.position, player.transform.position) > 15f)
+        int layermask = 1 << 8;
+        layermask = ~layermask;
+
+        var dist = Vector3.Distance(transform.position, player.transform.position);
+
+        if (dist > 15f && Physics.Linecast(transform.position, player.transform.position, layermask))
         {
             transform.position = player.transform.position - (player.transform.forward * 7f);
+            AudioSource audioData;
+            audioData = GetComponent<AudioSource>();
+            audioData.Play(0);
         }
 
-        if (Vector3.Distance(transform.position, player.transform.position) < 1.5f)
+        if (dist < 7)
         {
-            // TODO: Add player death
+            this.GetComponentInChildren<Animator>().runtimeAnimatorController = animEat as RuntimeAnimatorController;
+        }
+        else
+        {
+            this.GetComponentInChildren<Animator>().runtimeAnimatorController = animWalk as RuntimeAnimatorController;
+        }
+
+        if (dist < 1.5f)
+        {
+            UnityEditor.EditorApplication.isPlaying = false;
         }
 
         

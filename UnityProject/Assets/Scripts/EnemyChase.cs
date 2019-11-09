@@ -25,6 +25,7 @@ public class EnemyChase : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        speed = player.GetComponent<PlayerBread>().HowManyBreadsHaveYouEatenInYourLife;
         if(!isActive)
         {
             if(player.GetComponent<PlayerBread>().HowManyBreadsHaveYouEatenInYourLife > 0)
@@ -64,8 +65,7 @@ public class EnemyChase : MonoBehaviour
                 }
                 else
                 {
-                    q = Mathf.Clamp(q, 5, 7);
-                    transform.position = player.transform.position - (player.transform.forward * q);
+                    transform.position = player.transform.position - (player.transform.forward * 7);
                 }
                 teleportSound.Play(0);
             }

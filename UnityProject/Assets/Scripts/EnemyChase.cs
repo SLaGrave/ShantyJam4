@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class EnemyChase : MonoBehaviour
 {
@@ -90,7 +91,7 @@ public class EnemyChase : MonoBehaviour
             {
                 // Good end
                 t.text = "You Win";
-                UnityEditor.EditorApplication.isPlaying = false;
+                StartCoroutine(EndGame(5));
             }
             else
             {
@@ -99,14 +100,15 @@ public class EnemyChase : MonoBehaviour
                 isDone = true;
                 player.transform.LookAt(transform);
                 endGameSound.Play(0);
-                StartCoroutine(EndGame());
+                StartCoroutine(EndGame(11));
             }
         }
 
-        IEnumerator EndGame()
+        IEnumerator EndGame(int x)
         {
-            yield return new WaitForSeconds(5);
-            UnityEditor.EditorApplication.isPlaying = false;
+            yield return new WaitForSeconds(x);
+            Cursor.lockState = CursorLockMode.None;
+            SceneManager.LoadScene("menuScene");
         }
     }
 }

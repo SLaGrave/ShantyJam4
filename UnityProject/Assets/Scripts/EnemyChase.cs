@@ -100,7 +100,7 @@ public class EnemyChase : MonoBehaviour
                 isDone = true;
                 player.transform.LookAt(transform);
                 endGameSound.Play(0);
-                StartCoroutine(EndGame(11));
+                StartCoroutine(EndGame(13));
             }
         }
 

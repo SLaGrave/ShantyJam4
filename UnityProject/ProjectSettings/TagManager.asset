@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bread
   - ground
+  - BadBoy
   layers:
   - Default
   - TransparentFX

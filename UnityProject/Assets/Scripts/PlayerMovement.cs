@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private float vvel = 0f;
     private bool iscol = true;
     private bool ismov = false;
+    private bool isActive = true;
 
     [Header("Sound Stuff")]
     public AudioSource walksound;
@@ -24,6 +25,10 @@ public class PlayerMovement : MonoBehaviour
             iscol = true;
             vvel = 0f;
         }
+        else if(collision.gameObject.tag == "BadBoy")
+        {
+            isActive = false;
+        }
     }
 
     // Start is called before the first frame update
@@ -36,36 +41,39 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool prevmov = ismov;
-
-        // Movement
-        forward = Input.GetAxis("Vertical") * speed * Time.deltaTime;
-        strafe = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-        ismov = forward != 0 || strafe != 0;
-
-        transform.Translate(strafe, 0, forward);
-
-        if (Input.GetKeyDown("escape"))
+        if(isActive)
         {
-            // turn on the cursor
-            Cursor.lockState = CursorLockMode.None;
-        }
-        else if (Input.GetKeyDown("space") && vvel == 0)
-        {
-            vvel = 0.2f;
-            iscol = false;
-        }
+            bool prevmov = ismov;
 
-        if (!iscol)
-        {
-            //decrease vertical velocity
-            vvel -= 0.0075f;
-            transform.Translate(0, vvel, 0);
-        }
+            // Movement
+            forward = Input.GetAxis("Vertical") * speed * Time.deltaTime;
+            strafe = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+            ismov = forward != 0 || strafe != 0;
 
-        if (prevmov != ismov && ismov)
-            walksound.Play(0);
-        else if (prevmov != ismov)
-            walksound.Stop();
+            transform.Translate(strafe, 0, forward);
+
+            if (Input.GetKeyDown("escape"))
+            {
+                // turn on the cursor
+                Cursor.lockState = CursorLockMode.None;
+            }
+            else if (Input.GetKeyDown("space") && vvel == 0)
+            {
+                vvel = 0.2f;
+                iscol = false;
+            }
+
+            if (!iscol)
+            {
+                //decrease vertical velocity
+                vvel -= 0.0075f;
+                transform.Translate(0, vvel, 0);
+            }
+
+            if (prevmov != ismov && ismov)
+                walksound.Play(0);
+            else if (prevmov != ismov)
+                walksound.Stop();
+        }
     }
 }

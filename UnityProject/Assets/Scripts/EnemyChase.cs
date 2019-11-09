@@ -17,9 +17,14 @@ public class EnemyChase : MonoBehaviour
 
         transform.LookAt(player.transform);
 
+        if (Vector3.Distance(transform.position, player.transform.position) > 15f)
+        {
+            transform.position = player.transform.position - (player.transform.forward * 7f);
+        }
+
         if (Vector3.Distance(transform.position, player.transform.position) < 1.5f)
         {
-            Debug.Log("Chonk Eat!");
+            // TODO: Add player death
         }
 
         

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerBread : MonoBehaviour
 {
-    private int HowManyBreadsHaveYouEatenInYourLife;
+    public int HowManyBreadsHaveYouEatenInYourLife;
 
     public Text t;
 

@@ -312,10 +312,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3417173115977182551, guid: 9628bc725de69486a9e2f26db7e6204a,
+        type: 3}
+      propertyPath: m_Name
+      value: bread (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 1817032029607518020, guid: 9628bc725de69486a9e2f26db7e6204a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.9
+      value: 16.538998
       objectReference: {fileID: 0}
     - target: {fileID: 1817032029607518020, guid: 9628bc725de69486a9e2f26db7e6204a,
         type: 3}
@@ -325,7 +330,7 @@ PrefabInstance:
     - target: {fileID: 1817032029607518020, guid: 9628bc725de69486a9e2f26db7e6204a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -20.04
+      value: 12.527
       objectReference: {fileID: 0}
     - target: {fileID: 1817032029607518020, guid: 9628bc725de69486a9e2f26db7e6204a,
         type: 3}
@@ -366,11 +371,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3417173115977182551, guid: 9628bc725de69486a9e2f26db7e6204a,
-        type: 3}
-      propertyPath: m_Name
-      value: bread (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9628bc725de69486a9e2f26db7e6204a, type: 3}
@@ -6894,6 +6894,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3417173115977182551, guid: 9628bc725de69486a9e2f26db7e6204a,
+        type: 3}
+      propertyPath: m_Name
+      value: bread (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 1817032029607518020, guid: 9628bc725de69486a9e2f26db7e6204a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9006,10 +9011,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3417173115977182551, guid: 9628bc725de69486a9e2f26db7e6204a,
+        type: 3}
+      propertyPath: m_Name
+      value: bread
+      objectReference: {fileID: 0}
     - target: {fileID: 1817032029607518020, guid: 9628bc725de69486a9e2f26db7e6204a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -14.9
+      value: 16.538998
       objectReference: {fileID: 0}
     - target: {fileID: 1817032029607518020, guid: 9628bc725de69486a9e2f26db7e6204a,
         type: 3}
@@ -9019,7 +9029,7 @@ PrefabInstance:
     - target: {fileID: 1817032029607518020, guid: 9628bc725de69486a9e2f26db7e6204a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -20.90664
+      value: 11.660362
       objectReference: {fileID: 0}
     - target: {fileID: 1817032029607518020, guid: 9628bc725de69486a9e2f26db7e6204a,
         type: 3}
@@ -9060,11 +9070,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3417173115977182551, guid: 9628bc725de69486a9e2f26db7e6204a,
-        type: 3}
-      propertyPath: m_Name
-      value: bread
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9628bc725de69486a9e2f26db7e6204a, type: 3}
